@@ -9,6 +9,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => MaterialApp(
+      debugShowCheckedModeBanner: false,
         title: 'Google Maps App',
         theme: ThemeData(primarySwatch: Colors.blue),
         home: const GoogleMapPage(),
