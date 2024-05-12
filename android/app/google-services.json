@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "761329386028",
+    "firebase_url": "https://wvsu-locator-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "wvsu-locator",
+    "storage_bucket": "wvsu-locator.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:761329386028:android:c803b230ae1a30b997c789",
+        "android_client_info": {
+          "package_name": "com.example.google_map_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBd_iPNhGRZxJBj65Cdz7jQ0D6fXrlue2Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
