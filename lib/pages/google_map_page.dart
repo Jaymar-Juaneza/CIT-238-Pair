@@ -43,7 +43,7 @@ class _GoogleMapPageState extends State<GoogleMapPage> {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) async {
+    WidgetsBinding.instance!.addPostFrameCallback((_) async {
       await initializeMap();
     });
   }
@@ -57,7 +57,6 @@ class _GoogleMapPageState extends State<GoogleMapPage> {
         body: currentPosition == null
             ? const Center(child: CircularProgressIndicator())
             : GoogleMap(
-              
               mapType: MapType.satellite,
               zoomControlsEnabled: false,
               compassEnabled: false,
@@ -73,41 +72,59 @@ class _GoogleMapPageState extends State<GoogleMapPage> {
                       icon: BitmapDescriptor.defaultMarker,
                       position: currentPosition!,
                     ),
-                  generateMarker(culturalCenter, 'culturalCenter'),
-                  generateMarker(coc, 'coc'),
-                  generateMarker(admin, 'admin'),
-                  generateMarker(monofo, 'monofo'),
-                  generateMarker(quezonhall, 'quezonhall'),
-                  generateMarker(hometel, 'hometel'),
-                  generateMarker(magsaysayhall, 'magsaysayhall'),
-                  generateMarker(ils, 'ils'),
-                  generateMarker(claroRectoHall, 'claroRectoHall'),
-                  generateMarker(com, 'com'),
-                  generateMarker(cict, 'cict'),
-                  generateMarker(lopezJaena, 'lopezJaena'),
-                  generateMarker(rizalhall, 'rizalhall'),
-                  generateMarker(nursing, 'nursing'),
-                  generateMarker(coop, 'coop'),
-                  generateMarker(gchall, 'gchall'),
-                  generateMarker(urdc, 'urdc'),
-                  generateMarker(binhi, 'binhi'),
+                  generateMarker(culturalCenter, 'culturalCenter','assets/Loc_pix/SL.png'),
+                  generateMarker(coc, 'coc','assets/Loc_pix/SL.png'),
+                  generateMarker(admin, 'admin','assets/Loc_pix/ADMIN.jpg' ),
+                  generateMarker(monofo, 'assets/Loc_pix/Minifo.jpg',),
+                  generateMarker(quezonhall, 'quezonhall','assets/Loc_pix/SL.png' ),
+                  generateMarker(hometel, 'hometel','assets/Loc_pix/SL.png' ),
+                  generateMarker(magsaysayhall, 'magsaysayhall','assets/Loc_pix/SL.png' ),
+                  generateMarker(ils, 'ils','assets/Loc_pix/SL.png' ),
+                  generateMarker(claroRectoHall, 'claroRectoHall','assets/Loc_pix/SL.png'),
+                  generateMarker(com, 'com','assets/Loc_pix/SL.png'),
+                  generateMarker(cict, 'cict','assets/Loc_pix/SL.png'),
+                  generateMarker(lopezJaena, 'lopezJaena', 'assets/Loc_pix/Lopez.jpeg'),
+                  generateMarker(rizalhall, 'rizalhall','assets/Loc_pix/SL.png'),
+                  generateMarker(nursing, 'nursing','assets/Loc_pix/SL.png' ),
+                  generateMarker(coop, 'coop','assets/Loc_pix/SL.png' ),
+                  generateMarker(gchall, 'gchall','assets/Loc_pix/SL.png' ),
+                  generateMarker(urdc, 'urdc','assets/Loc_pix/SL.png' ),
+                  generateMarker(binhi, 'binhi','assets/Loc_pix/SL.png' ),
                 },
                 polylines: Set<Polyline>.of(polylines.values),
                 onTap: _handleMapTap, 
               ),
       );
-
-  Marker generateMarker(LatLng position, String markerId) {
+}
+  Marker generateMarker(LatLng position, String markerId, String imageAssetPath) {
     return Marker(
       markerId: MarkerId(markerId),
       icon: BitmapDescriptor.defaultMarker,
       position: position,
+      onTap: () {
+        _handleMarkerTap(context, position, imageAssetPath);
+      },
     );
   }
 
+  void _handleMarkerTap(BuildContext context, LatLng position, String imageAssetPath) {
+    showModalBottomSheet<void>(
+      context: context,
+      builder: (BuildContext context) {
+        return Container(
+          height: 200,
+          child: Column(
+            children: <Widget>[
+              Text('Image for marker at ${position.latitude}, ${position.longitude}'),
+              Image.asset(imageAssetPath),
+            ],
+          ),
+        );
+      },
+    );
+  }
+      
   Future<void> fetchLocationUpdates() async {
- 
-
     locationController.onLocationChanged.listen((currentLocation) {
       if (currentLocation.latitude != null &&
           currentLocation.longitude != null) {
@@ -153,7 +170,7 @@ class _GoogleMapPageState extends State<GoogleMapPage> {
         width: 5,
       );
 
-      setState(() => polylines[id] = polyline); // Add the poly
+      setState(() => polylines[id] = polyline);
     }
   }
 }
