@@ -40,7 +40,7 @@ class _RegisterPageState extends State<RegisterPage> {
     final String firstName = _firstNameController.text.trim();
     final String lastName = _lastNameController.text.trim();
 
-    // Check if any field is empty
+
     if (email.isEmpty ||
         password.isEmpty ||
         reEnteredPassword.isEmpty ||
@@ -65,7 +65,6 @@ class _RegisterPageState extends State<RegisterPage> {
       return;
     }
 
-    // Validate email format
     if (!email.endsWith('@wvsu.edu.ph')) {
       showDialog(
         context: context,
@@ -83,7 +82,7 @@ class _RegisterPageState extends State<RegisterPage> {
       return;
     }
 
-    // Validate passwords match
+
     if (password != reEnteredPassword) {
       showDialog(
         context: context,
@@ -106,7 +105,7 @@ class _RegisterPageState extends State<RegisterPage> {
         password: password,
       );
 
-      // Save additional user data to Realtime Database
+      // Realtime DB 
       if (userCredential.user != null) {
         final Map<String, dynamic> userData = {
           'email': email,
