@@ -12,16 +12,17 @@ dependencies:
     sdk: flutter 
   cupertino_icons: ^1.0.2
   google_maps_flutter: ^2.3.0
-  location: ^5.0.3
-  flutter_polyline_points: ^1.0.0
+  location: ^6.0.2
+  flutter_polyline_points: ^2.0.0
   firebase_core: ^2.31.0
   firebase_auth: ^4.19.5
   firebase_database: ^10.5.5
-
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+  flutter_lints: ^4.0.0
+  flutter_launcher_icons: "^0.13.1"
 
 flutter: 
   uses-material-design: true
@@ -40,3 +41,23 @@ flutter:
     - assets/Loc_pix/cultu.jpg
     - assets/Loc_pix/nursing.jpeg
     - assets/Loc_pix/urdc.jpg
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/logo.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  web:
+    generate: true
+    image_path: "assets/logo.png"
+    background_color: "#hexcode"
+    theme_color: "#hexcode"
+  windows:
+    generate: true
+    image_path: "assets/logo.png"
+    icon_size: 48 # min:48, max:256, default: 48
+  macos:
+    generate: true
+    image_path: "assets/logo.png"
+    
+    
