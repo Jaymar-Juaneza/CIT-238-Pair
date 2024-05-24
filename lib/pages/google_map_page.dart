@@ -19,10 +19,10 @@ class _GoogleMapPageState extends State<GoogleMapPage> {
   static const mainGate = LatLng(10.714672039183245, 122.5631586967368);
   static const wvsu = LatLng(10.713813016557683, 122.562420935689);
   static const culturalCenter = LatLng(10.714717218977253, 122.56274398495192);
-  static const coc = LatLng(10.714731253260675, 122.56216551074581);
+  static const coc = LatLng(10.714507871838133, 122.56231651812675);
   static const admin = LatLng(10.714153137171767, 122.56206378022915);
-  static const monofo = LatLng(10.713541983525266, 122.56223098354855);
-  static const quezonhall = LatLng(10.7131978245614, 122.56270237659399);
+  static const monofo = LatLng(10.713689350926872, 122.5622805905617);
+  static const quezonhall = LatLng(10.713278547336751, 122.56254733562898);
   static const hometel = LatLng(10.712908675836438, 122.56270070456334);
   static const magsaysayhall = LatLng(10.712933159065075, 122.5632917281835);
   static const ils = LatLng(10.713427668879882, 122.56358935007543);
@@ -59,7 +59,7 @@ class _GoogleMapPageState extends State<GoogleMapPage> {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance!.addPostFrameCallback((_) async {
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
       await initializeMap();
     });
   }
@@ -73,7 +73,7 @@ class _GoogleMapPageState extends State<GoogleMapPage> {
     body: currentPosition == null
     ? const Center(child: CircularProgressIndicator())
     : GoogleMap(
-      mapType: MapType.satellite,
+      mapType: MapType.normal,
       zoomControlsEnabled: false,
       compassEnabled: false,
       mapToolbarEnabled: false,
