@@ -20,7 +20,7 @@ class _GoogleMapPageState extends State<GoogleMapPage> {
   static const wvsu = LatLng(10.713813016557683, 122.562420935689);
   static const culturalCenter = LatLng(10.714717218977253, 122.56274398495192);
   static const coc = LatLng(10.714507871838133, 122.56231651812675);
-  static const admin = LatLng(10.714153137171767, 122.56206378022915);
+  static const admin = LatLng(10.714074579244613, 122.56209614272478);
   static const monofo = LatLng(10.713689350926872, 122.5622805905617);
   static const quezonhall = LatLng(10.713278547336751, 122.56254733562898);
   static const hometel = LatLng(10.712908675836438, 122.56270070456334);
@@ -29,7 +29,7 @@ class _GoogleMapPageState extends State<GoogleMapPage> {
   static const claroRectoHall = LatLng(10.712131427146293, 122.56387526775507);
   static const com = LatLng(10.712766200686554, 122.56185436616856);
   static const cict = LatLng(10.713304270148281, 122.56149005389763);
-  static const lopezJaena = LatLng(10.713984172456238, 122.5616458603664);
+  static const lopezJaena = LatLng(10.713855003740916, 122.56170098030383);
   static const rizalhall = LatLng(10.713795060712528, 122.5614029855178);
   static const nursing = LatLng(10.713202960075657, 122.5609974303304);
   static const coop = LatLng(10.71293955371625, 122.56116469319585);
